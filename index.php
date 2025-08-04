@@ -201,8 +201,8 @@
 
 
        <!-- what we offer -->
-        <section class="offer">
-             <div class="container" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+        <section class="offer mb-5">
+             <div class="container">
                   <h2 class="section-title__title text-center mb-4">What We Offer</h2>
                   <div class="row g-4">
                       <div class="col-lg-4 shadow p-3 rounded-3">
@@ -231,7 +231,7 @@
        <!-- end of what we offer -->
 
        <!-- make more money -->
-        <div class="more-money bg-light p-5">
+        <div class="more-money bg-light p-5 my-4">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-6">
