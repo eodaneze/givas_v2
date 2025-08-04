@@ -1,0 +1,349 @@
+<?php
+   $title ="User Deashboard";
+   require_once('./home_header.php');
+   require_once('./sessionCheck.php');
+   ?>
+  <body>  
+    <!-- loader starts-->
+    
+    <!-- loader ends-->
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page Header Start-->
+      <?php
+        require_once('./home_navbar.php');
+        require_once('./model/about-phase.php');
+      ?>
+      <!-- Page Header Ends                              -->
+      <!-- Page Body Start-->
+      <div class="page-body-wrapper">
+        <!-- Page Sidebar Start-->
+           <?php 
+              require_once('./sidebar.php')
+           ?>
+        <!-- Page Sidebar Ends-->
+        <div class="page-body">
+          <div class="container-fluid">
+            <div class="page-title">
+              <div class="row">
+                <div class="col-6">
+                  <h4>
+                     <?=$title?> </h4>
+                </div>
+                <div class="col-6">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html"> 
+                        <svg class="stroke-icon">
+                          <use href="./assets/svg/icon-sprite.svg#stroke-home"></use>
+                        </svg></a></li>
+                    <li class="breadcrumb-item">Dashboard</li>
+                    <li class="breadcrumb-item active"><?=$title?></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid row">
+             <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="col-lg-3 alert alert-light text-center">
+                 <p><Strong>Current Phase:</Strong> <?=$phase?></p>
+             </a>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid">
+            <div class="row size-column"> 
+              <div class="col-xxl-9 box-col-12">
+                <div class="row"> 
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-project border-b-primary border-2"><span class="f-light f-w-500 f-14">Enter Amount</span>
+                        <div class="project-details"> 
+                          <div class="project-counter"> 
+                            <h2 class="f-w-600">$<?=number_format($entery_amount, 2)?></h2><span class="f-12 f-w-400"></span>
+                          </div>
+                          <div class="product-sub bg-primary-light">
+                            <svg class="invoice-icon">
+                              <use href="./assets/svg/icon-sprite.svg#color-swatch"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-Progress border-b-warning border-2"> <span class="f-light f-w-500 f-14">Withdrawal Balance</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">$<?=number_format($withdrawal_balance, 2)?></h2><span class="f-12 f-w-400"></span>
+                          </div>
+                          <div class="product-sub bg-warning-light"> 
+                            <svg class="invoice-icon">
+                              <use href="./assets/svg/icon-sprite.svg#tick-circle"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles">
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-Complete border-b-secondary border-2"><span class="f-light f-w-500 f-14">Gas Fee</span>
+                        <div class="project-details">
+                          <div class="project-counter">
+                            <h2 class="f-w-600">$ <?=number_format($gasFee, 2)?></h2><span class="f-12 f-w-400"></span>
+                          </div>
+                          <div class="product-sub bg-secondary-light"> 
+                            <svg class="invoice-icon">
+                              <use href="./assets/svg/icon-sprite.svg#add-square"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles"> 
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6">
+                    <div class="card o-hidden small-widget">
+                      <div class="card-body total-upcoming"><span class="f-light f-w-500 f-14">Total Phase Earnings</span>
+                        <div class="project-details"> 
+                          <div class="project-counter">
+                            <h2 class="f-w-600">$ <?=$total_phase_earning?></h2><span class="f-12 f-w-400"></span>
+                          </div>
+                          <div class="product-sub bg-light-light"> 
+                            <svg class="invoice-icon">
+                              <use href="./assets/svg/icon-sprite.svg#edit-2"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul class="bubbles"> 
+                          <li class="bubble"> </li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                          <li class="bubble"></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                </div>
+                  <div class="table-responsive bg-white border rounded-3">
+                       <!--  -->
+                       <?php
+                              // Step 1: Fetch the first and second users in the givas_phase_1 table
+                              $sql_first_two = "SELECT * FROM givas_phase_1 ORDER BY user_id ASC LIMIT 2";
+                              $res_first_two = mysqli_query($conn, $sql_first_two);
+
+                              $first_user = null;
+                              $second_user = null;
+
+                              if ($res_first_two && mysqli_num_rows($res_first_two) > 0) {
+                                  $first_user = mysqli_fetch_assoc($res_first_two);
+                                  if (mysqli_num_rows($res_first_two) > 1) {
+                                      $second_user = mysqli_fetch_assoc($res_first_two);
+                                  }
+                              }
+
+                              // Step 2: Fetch the new users under the first and second users
+                              $sql_new_users = "SELECT * FROM givas_phase_1 WHERE user_id > '{$first_user['user_id']}' ORDER BY user_id ASC LIMIT 12";
+                              $res_new_users = mysqli_query($conn, $sql_new_users);
+
+                              $users_under_first = [];
+                              $users_under_second = [];
+                              $total_users_under_first = 0;
+                              $total_users_under_second = 0;
+
+                              if ($res_new_users) {
+                                  $i = 1;
+                                  while ($row = mysqli_fetch_assoc($res_new_users)) {
+                                      // Fetch details from the user table for each user
+                                      $user_id = $row['user_id'];
+                                      $sql_user = "SELECT * FROM user WHERE user_id = '$user_id'";
+                                      $res_user = mysqli_query($conn, $sql_user);
+                                      $user_details = mysqli_fetch_assoc($res_user);
+
+                                      if ($i <= 12) {
+                                          $users_under_first[] = $user_details;
+                                          $total_users_under_first++;
+                                          if ($i > 1) {
+                                              $users_under_second[] = $user_details;
+                                              $total_users_under_second++;
+                                          }
+                                      }
+                                      $i++;
+                                  }
+                              }
+
+                              // Step 3: Calculate earnings for the first and second users
+                              if ($first_user) {
+                                  $earnings_first_user = min($total_users_under_first, 12) * (8 * 0.60); // 60% of $8 per user
+                                  $update_first_user = "UPDATE givas_phase_1 SET total_phase_earning = '{$earnings_first_user}' WHERE user_id = '{$first_user['user_id']}'";
+                                  mysqli_query($conn, $update_first_user);
+
+                                  // Check if the first user has completed their phase
+                                  if ($total_users_under_first >= 12) {
+                                      $remove_first_user = "DELETE FROM givas_phase_1 WHERE user_id = '{$first_user['user_id']}'";
+                                      mysqli_query($conn, $remove_first_user);
+                                  }
+                              }
+
+                              if ($second_user) {
+                                  $earnings_second_user = min($total_users_under_second, 11) * (8 * 0.40); // 40% of $8 per user
+                                  if ($total_users_under_first > 11) {
+                                      $earnings_second_user += 8 * 0.60; // Add 60% of $8 for the 12th user
+                                  }
+
+                                  $update_second_user = "UPDATE givas_phase_1 SET total_phase_earning = '{$earnings_second_user}' WHERE user_id = '{$second_user['user_id']}'";
+                                  mysqli_query($conn, $update_second_user);
+                              }
+
+                              // Step 4: Display the users under each first and second user
+                              ?>
+                              <table class="table table-bordered">
+                                  <thead>
+                                      <tr>
+                                          <th>#</th>
+                                          <th>Email</th>
+                                          <th>Username</th>
+                                          <th>First Name</th>
+                                          <th>Last Name</th>
+                                          <th>Earnings</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <?php if ($first_user): ?>
+                                          <tr>
+                                              <td colspan="6">Users under <?= $first_user['user_id'] ?> (First User)</td>
+                                          </tr>
+                                          <?php foreach ($users_under_first as $index => $user): ?>
+                                              <tr>
+                                                  <td><?= $index + 1 ?></td>
+                                                  <td><?= $user['email'] ?></td>
+                                                  <td><?= $user['uname'] ?></td>
+                                                  <td><?= $user['fname'] ?></td>
+                                                  <td><?= $user['lname'] ?></td>
+                                                  <td>$ <?= number_format(8 * 0.60, 2) ?></td>
+                                              </tr>
+                                          <?php endforeach; ?>
+                                      <?php endif; ?>
+
+                                      <?php if ($second_user): ?>
+                                          <tr>
+                                              <td colspan="6">Users under <?= $second_user['user_id'] ?> (Second User)</td>
+                                          </tr>
+                                          <?php foreach ($users_under_second as $index => $user): ?>
+                                              <tr>
+                                                  <td><?= $index + 1 ?></td>
+                                                  <td><?= $user['email'] ?></td>
+                                                  <td><?= $user['uname'] ?></td>
+                                                  <td><?= $user['fname'] ?></td>
+                                                  <td><?= $user['lname'] ?></td>
+                                                  <td>$ <?= number_format(8 * 0.40, 2) ?></td>
+                                              </tr>
+                                          <?php endforeach; ?>
+                                      <?php endif; ?>
+                                  </tbody>
+                              </table>
+
+                       <!--  -->
+                  </div>
+              </div>
+              
+              <div class="col-xxl-3 d-xxl-block d-none activity-group box-col-none">
+              <div class="col-xl-12 col-md-6">
+                    <div class="card overflow-hidden"> 
+                      <div class="card-body pt-0 project-ideas-card">
+                        <div class="project-card">
+                          <div><span class="f-22 f-w-500 text-center">Welcome to Givas</span>
+                            <div class="btn-showcase text-center"> <a href="pricing.html"> 
+                                <button class="btn btn-pill btn-outline-primary-2x b-r-8 active">Upgrade Now</button></a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+        <!-- footer start-->
+         <?php 
+            require_once('./footer.php');
+            require_once('./sweet-alert.php');
+         ?>
+      </div>
+    </div>
+    <?php require_once('./main-script.php') ?>
+  </body>
+</html>
+
+
+
+
+
+<div class="row">
+                          <div class="col-lg-6 mb-4">
+                            <div class="row">
+                                <div class="col-lg-12 mb-4">
+                                  <label>Old Password</label>
+                                  <input name="opassword" placeholder="Enter old password" type="text" class="form-control">
+
+                                </div>
+                                <div class="col-lg-12 mb-4">
+                                    <label>New Password</label>
+                                    <input name="npassword" placeholder="Enter password" type="text" class="form-control">
+                                </div>
+                                <div class="col-lg-12 mb-4">
+                                    <label>Confirm New Password</label>
+                                    <input name="cpassword" placeholder="confirm password" type="text" class="form-control">
+                                </div>
+                                <button class="btn btn-primary btn-sm shadow" type="button" id="updatePasswordBtn">Update</button>
+                            </div>
+                          </div>
+                          <div class="col-lg-6">
+                               <img src="./assets/images/login/2.jpg" class="img-fluid" alt="">
+                          </div>
+                        
+                      </div>

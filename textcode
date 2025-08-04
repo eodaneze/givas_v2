@@ -1,0 +1,54 @@
+ <tbody>
+                        <?php 
+                            if($phase == 'Givas: Phase 1'){
+                              // Get 12 users in the givas_phase_1 table that registered after the logged in user
+                              $sql = "SELECT * FROM givas_phase_1 WHERE user_id > '$user_id' ORDER BY user_id ASC LIMIT 12";
+                              $res = mysqli_query($conn, $sql);
+                              $i = 1;
+                              $total_earning = 0;
+                              while($row = mysqli_fetch_assoc($res)){
+                                $next_user_id = $row['user_id'];
+                                $reg_amount = $row['entery_amount'];
+                                $total_phase_earning	 = $row['total_phase_earning'];
+                                $sql_user = "SELECT * FROM user WHERE user_id = '$next_user_id'";
+                                $res_user = mysqli_query($conn, $sql_user);
+                                if($user_row = mysqli_fetch_assoc($res_user)){
+                                  $email = $user_row['email'];
+                                  $uname = $user_row['uname'];
+                                  $fname = $user_row['fname'];
+                                  $lname = $user_row['lname'];
+                                  ?>
+                                  <tr>
+                                    <td><?=$i?></td>
+                                    <td><?=$email?></td>
+                                    <td><?=$uname?></td>
+                                    <td><?=$fname?></td>
+                                    <td><?=$lname?></td>
+                                    <td>$ <?=number_format($reg_amount, 2)?></td>
+                                  </tr>
+                                  <?php
+                                  // Calculate earnings for the first and second users
+                                  if ($i == 1) {
+                                    $total_earning += 8 * 0.60;
+                                  } elseif ($i == 2) {
+                                    $total_earning += 8 * 0.40;
+                                  }
+                                }
+                                $i++;
+                              }
+
+                              $total_earnings = $total_phase_earning + $total_earning;
+                              // Update total_phase_earning in the givas_phase_1 table
+                              $update_sql = "UPDATE givas_phase_1 SET total_phase_earning = '$total_earnings' WHERE user_id = '$user_id'";
+                              mysqli_query($conn, $update_sql);
+
+                              // Check if the user has completed the phase
+                              if ($i > 12) {
+                                // Remove the user from the givas_phase_1 table
+                                $delete_sql = "DELETE FROM givas_phase_1 WHERE user_id = '$user_id'";
+                                mysqli_query($conn, $delete_sql);
+                              }
+                            }
+                        ?>
+                         
+                       </tbody>

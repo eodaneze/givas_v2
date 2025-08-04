@@ -1,0 +1,14 @@
+<IfModule mod_headers.c>
+Header set Strict-Transport-Security max-age=16070400;
+</IfModule>
+
+RewriteEngine On
+RewriteBase /givas_v2/
+
+# Pretty URL: /affiliate/62104/97051 → user/redirect.php?affiliate_id=62104&product_id=97051
+RewriteRule ^affiliate/([0-9]+)/([0-9]+)$ user/redirect.php?affiliate_id=$1&product_id=$2 [L,QSA]
+
+# Optional: auto-append .php if file doesn't exist (keep it last)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

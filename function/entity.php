@@ -1,0 +1,3 @@
+<?php 
+   $entities = ['Individual', 'Organization'];
+?>

@@ -1,0 +1,160 @@
+.pro-main{
+    width: 600px;
+}
+.all-pro{
+    background-color: #f0f0f0;
+    padding: 25px;
+
+}
+.pro-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.pro-top h4, .pro-down h4{
+    color:rgb(0, 102, 102);
+    font-size: 25px;
+    font-weight: bold;
+}
+.pro-top p{
+   color: black;
+   font-size: 16px;
+}
+.back-icon{
+    border: 1px solid rgb(0, 102, 102);
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 102, 102);
+    color: white;
+    transition: .30s ease;
+}
+.arrow-back{
+    display: flex;
+    align-items: center;
+}
+.arrow-back p{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.back-icon:hover{
+    background-color: white;
+}
+      .button-reg{
+      width: 100%;
+      border: none;
+      padding: 20px 10px;
+      border-radius: 5px;
+      transition: .30s ease;
+      color: white;
+  }
+  .btn-main{
+      background-color: #fe7f4c;
+  }
+      .btn-pri{
+      background-color: #07847f;
+      
+  }
+  .btn-main:hover{
+      border: 1px solid #fe7f4c;
+      background-color: white;
+      color: black;
+      transition: .30s ease;
+  }
+  .btn-pri:hover{
+      border: 1px solid #07847f;
+      background-color: white;
+      color: black;
+  }
+  .coupon-input{
+     width: 100%;
+     border: none;
+     padding: 20px 10px;
+     border-radius: 10px;
+     border: 1px solid #ccc;
+     font-size: 18px;
+  }
+  .coupon-input:focus{
+     outline: 1px solid #07847f;
+  }
+  .coupon-input::placeholder{
+     color: #ccc;
+     font-size: 16px;
+  }
+  /* Initially hide the form */
+#couponFormSection {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+/* When visible */
+#couponFormSection.show {
+    max-height: 300px; /* Adjust if form gets taller */
+}
+
+  @media (max-width: 600px){
+      .btn-pri{
+          margin-bottom: 15px;
+      }
+      .pro-main{
+    width: 100%;
+}
+  }
+
+
+  /* sidebar for pro plan */
+  .modal-sidebar {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    padding: 20px;
+    overflow-y: auto;
+}
+.modal-sidebar.active {
+    right: 0;
+}
+.close-btn {
+    font-size: 20px;
+    cursor: pointer;
+    float: right;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.drag-drop {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.modal-sidebar h3{
+     color: rgb(0, 102, 102);
+     margin-bottom: 20px;
+}
+.form-group input:focus{
+     outline: 1px solid rgb(0, 102, 102);
+}
+.btn-submit{
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      transition: .30s ease;
+      color: white;
+      background-color: #fe7f4c;
+}

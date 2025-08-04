@@ -1,0 +1,112 @@
+.activate-btn{
+      background-color: #f0f0f0;
+      padding: 10px 15px;
+      border-radius: 6px;
+      border: none;
+   }
+   .activate-btn a{
+     font-size: 17px;
+     /* font-weight: bold; */
+                                            
+   }
+   .kyc-alert{
+      display: flex;
+      justify-content: space-between;
+   }
+     .kyc-alert h5{
+         color: #fff;
+         font-size: 20px;
+         font-weight: bolder;
+     }
+     .kyc-alert p{
+        color: white;
+     }
+     
+       .pro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    animation: changeColor 3s infinite alternate ease-in-out;
+    color: white;
+    
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: black;
+    }
+    100% {
+        background-color: #0066cc;
+    }
+}
+
+.pro-left {
+    flex-basis: 70%;
+}
+
+.pro-left p {
+    font-size: 14px;
+}
+
+.pro-right button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.pro-right button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+.falling {
+      position: fixed;
+      top: -100px;
+      pointer-events: none;
+      z-index: 9999;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+     @media(max-width: 600px){
+         .kyc-alert{
+           flex-direction: column;
+     } 
+       .kyc-alert h5{
+         color: #fff;
+         font-size: 14px;
+         font-weight: bolder;
+       }
+       .main-activate-btn{
+           margin-top: 15px;
+       }
+       .activate-btn{
+          width: 100%;
+       }
+        .pro{
+         flex-direction: column;
+      }
+      .pro-right button{
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        width: 280px;
+        margin-top: 7px;
+     }
+     }       
