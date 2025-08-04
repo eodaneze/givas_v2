@@ -84,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'status' => 'success',
             'payment_link' => $res['data']['link']
         ]);
+        
     } else {
         echo json_encode([
             'status' => 'error',
@@ -92,3 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+
+

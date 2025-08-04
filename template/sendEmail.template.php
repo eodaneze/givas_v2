@@ -75,7 +75,7 @@ $body = "
     <section class='main'>
      
       <div class='content container'>
-        <h3>Yo! $fullName 😃</h3>
+        <h3>Dear Valued User 😃</h3>
         <p>
            $message
         </p>

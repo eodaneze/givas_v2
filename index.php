@@ -231,7 +231,7 @@
        <!-- end of what we offer -->
 
        <!-- make more money -->
-        <div class="more-money bg-light p-5 my-5">
+        <div class="more-money bg-light p-5">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-6">
